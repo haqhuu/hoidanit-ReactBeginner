@@ -1,10 +1,17 @@
 import React from 'react';
+import ChildComponent from './ChildComponent';
+
 //  this is comment
 class MyComponent extends React.Component {
 
     state = {
-        firstName: '',
-        lastName: ''
+        firstName: 'Huu',
+        lastName: 'HaHa',
+        arrJobs: [
+            { id: '0', title: 'dev', salary: '500 $' },
+            { id: '1', title: 'tester', salary: '400 $' },
+            { id: '2', title: 'CEO', salary: '50000 $' },
+        ]
     }
 
     handleOnChangeFName = event => {
@@ -24,7 +31,7 @@ class MyComponent extends React.Component {
     }
 
     render() {
-        let name = 'AAA'
+
         return (
             <>
                 <form>
@@ -38,7 +45,12 @@ class MyComponent extends React.Component {
                         onClick={() => this.handleOnClick()}
                     />
                 </form>
+                <ChildComponent
 
+                    line={'$below lines was passed from MyCPN to ChildCPN__'}
+                    name={this.state.firstName + " " + this.state.lastName}
+                    jobs={this.state.arrJobs}
+                />
             </>
         )
     }
