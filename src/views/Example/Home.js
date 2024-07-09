@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../assets/images/logo.jpg"
 
 class Home extends React.Component {
 
@@ -13,6 +14,7 @@ class Home extends React.Component {
         return (
             <>
                 <div>Home page</div>
+                <img style={{ width: '200px' }} src={logo} />
             </>
         )
     }
